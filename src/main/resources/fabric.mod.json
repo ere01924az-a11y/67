@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "anomalnaya_zhara",
+  "version": "${version}",
+  "name": "Аномальная жара",
+  "description": "Мир Minecraft постепенно превращается в раскалённую пустыню.",
+  "authors": ["Andrey"],
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.andrey.anomalnayazhara.AnomnayaZhara"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "fabric-api": "*"
+  }
+}
