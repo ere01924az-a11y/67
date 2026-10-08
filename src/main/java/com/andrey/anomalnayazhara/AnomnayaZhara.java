@@ -3,7 +3,6 @@ package com.andrey.anomalnayazhara;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -23,7 +22,7 @@ public class AnomnayaZhara implements ModInitializer {
     public void onInitialize() {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
-                if (!(player.getWorld() instanceof ServerWorld world)) continue;
+                ServerWorld world = player.getServerWorld();
 
                 long day = world.getTimeOfDay() / 24000L;
                 int baseHeat = (int)MathHelper.clamp(day * 2, 0, 100);
